@@ -102,10 +102,9 @@ GROUP BY 1
 
 4. **Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.**:
 ```sql
-SELECT
-    ROUND(AVG(age), 2) as avg_age
-FROM retail_sales
-WHERE category = 'Beauty'
+select avg(age) as avg_age
+from retail_sales
+where category = 'Beauty';
 ```
 
 5. **Write a SQL query to find all transactions where the total_sale is greater than 1000.**:
@@ -116,16 +115,10 @@ WHERE total_sale > 1000
 
 6. **Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.**:
 ```sql
-SELECT 
-    category,
-    gender,
-    COUNT(*) as total_trans
+SELECT category, gender, count(transactions_id) as total_transaction  
 FROM retail_sales
-GROUP 
-    BY 
-    category,
-    gender
-ORDER BY 1
+GROUP BY category,gender
+ORDER BY category; 
 ```
 
 7. **Write a SQL query to calculate the average sale for each month. Find out best selling month in each year**:
@@ -144,7 +137,7 @@ SELECT
 FROM retail_sales
 GROUP BY 1, 2
 ) as t1
-WHERE rank = 1
+WHERE rank = 1;
 ```
 
 8. **Write a SQL query to find the top 5 customers based on the highest total sales **:
@@ -155,7 +148,7 @@ SELECT
 FROM retail_sales
 GROUP BY 1
 ORDER BY 2 DESC
-LIMIT 5
+LIMIT 5;
 ```
 
 9. **Write a SQL query to find the number of unique customers who purchased items from each category.**:
@@ -211,17 +204,6 @@ This project serves as a comprehensive introduction to SQL for data analysts, co
 3. **Run the Queries**: Use the SQL queries provided in the `analysis_queries.sql` file to perform your analysis.
 4. **Explore and Modify**: Feel free to modify the queries to explore different aspects of the dataset or answer additional business questions.
 
-## Author - Zero Analyst
 
-This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
 
-### Stay Updated and Join the Community
 
-For more content on SQL, data analysis, and other data-related topics, make sure to follow me on social media and join our community:
-
-- **YouTube**: [Subscribe to my channel for tutorials and insights](https://www.youtube.com/@zero_analyst)
-- **Instagram**: [Follow me for daily tips and updates](https://www.instagram.com/zero_analyst/)
-- **LinkedIn**: [Connect with me professionally](https://www.linkedin.com/in/najirr)
-- **Discord**: [Join our community to learn and grow together](https://discord.gg/36h5f2Z5PK)
-
-Thank you for your support, and I look forward to connecting with you!
